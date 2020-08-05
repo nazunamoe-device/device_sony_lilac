@@ -1,14 +1,20 @@
 [
   {
-    "repository": "cryptomilk/android_kernel_sony_msm8998",
+    "repository": "whatawurst/android_kernel_sony_msm8998",
     "target_path": "kernel/sony/msm8998"
   },
   {
-    "repository": "cryptomilk/android_device_sony_common-treble",
+    "repository": "shank03/android_device_sony_common-treble",
     "target_path": "device/sony/common-treble"
   },
   {
-    "repository": "cryptomilk/android_device_sony_yoshino",
+    "repository": "shank03/android_device_sony_yoshino",
     "target_path": "device/sony/yoshino"
+  },
+  {
+    "repository"  : "packages_apps_PixelLiveWallpaper",
+    "target_path" : "packages/apps/PixelLiveWallpaper",
+    "branch"      : "ten",
+    "remote"      : "pixel-gitlab"
   }
 ]
