@@ -104,7 +104,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.tintless.skip=1
 
 # Use Vulkan for UI rendering
-PRODUCT_PROPERTY_OVERRIDES += debug.hwui.renderer=skiavk
+#PRODUCT_PROPERTY_OVERRIDES += debug.hwui.renderer=skiavk
 
 # USB debugging at boot
 # Do not enable if build type is user
