@@ -1,5 +1,11 @@
 # system prop for lilac
 
+#GMS
+ro.com.google.clientidbase.ms=android-sonymobile
+
+# Apex
+ro.apex.updatable=true
+
 ### USB
 ro.vendor.usb.pid_suffix=1F4
 
@@ -30,3 +36,28 @@ ro.semc.version.fs=GENERIC
 ro.semc.version.fs_revision=47.2.A.11.228
 ro.semc.product.name=Xperia XZ1 Compact
 ro.semc.product.device=G84
+
+# Enabling Assistant
+ro.opa.eligible_device=true
+
+#Google Camera trial
+ro.hardware.camera=msm8998
+persist.camera.eis.enable=1
+media.camera.ts.monotonic=1
+persist.camera.tnr.cds=1
+persist.tnr.process.plates=1
+persist.denoise.process.plates=1
+persist.camera.rdi.mode=1
+persist.camera.video.CDS=1
+persist.camera.HAL3.enabled=1
+persist.camera.is_type=5
+persist.camera.is_mode=5
+persist.camera.max.previewfps=60
+persist.camera.tnr_cds=1
+persist.camera.tnr.video=1
+persist.camera.tnr.preview=1
+persist.camera.tnr.snapshot=1
+persist.camera.llnoise=1
+persist.tnr.process.plates=2
+persist.denoise.process.plates=2
+camera.lowpower.record.enable=1
