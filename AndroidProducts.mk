@@ -15,4 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_lilac.mk
+    $(LOCAL_DIR)/havoc_lilac.mk
+
+COMMON_LUNCH_CHOICES := \
+    havoc_lilac-user \
+    havoc_lilac-userdebug \
+    havoc_lilac-eng
