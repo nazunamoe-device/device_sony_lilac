@@ -1,0 +1,45 @@
+diff --git a/packages/SystemUI/src/com/android/systemui/assist/AssistHandleReminderExpBehavior.java b/packages/SystemUI/src/com/android/systemui/assist/AssistHandleReminderExpBehavior.java
+index 3f022129232..b1fcd9d7498 100644
+--- a/packages/SystemUI/src/com/android/systemui/assist/AssistHandleReminderExpBehavior.java
++++ b/packages/SystemUI/src/com/android/systemui/assist/AssistHandleReminderExpBehavior.java
+@@ -457,13 +457,13 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
+     }
+
+     private long getLearningTimeMs() {
+-        return mPhenotypeHelper.getLong(
++        return mDeviceConfigHelper.getLong(
+                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_LEARN_TIME_MS,
+                 DEFAULT_LEARNING_TIME_MS);
+     }
+
+     private int getLearningCount() {
+-        return mPhenotypeHelper.getInt(
++        return mDeviceConfigHelper.getInt(
+                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_LEARN_COUNT,
+                 DEFAULT_LEARNING_COUNT);
+     }
+@@ -487,7 +487,7 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
+     }
+
+     private boolean getSuppressOnLockscreen() {
+-        return mPhenotypeHelper.getBoolean(
++        return mDeviceConfigHelper.getBoolean(
+                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_SUPPRESS_ON_LOCKSCREEN,
+                 DEFAULT_SUPPRESS_ON_LOCKSCREEN);
+     }
+@@ -499,13 +499,13 @@ final class AssistHandleReminderExpBehavior implements BehaviorController {
+     }
+
+     private boolean getSuppressOnApps() {
+-        return mPhenotypeHelper.getBoolean(
++        return mDeviceConfigHelper.getBoolean(
+                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_SUPPRESS_ON_APPS,
+                 DEFAULT_SUPPRESS_ON_APPS);
+     }
+
+     private boolean getShowWhenTaught() {
+-        return mPhenotypeHelper.getBoolean(
++        return mDeviceConfigHelper.getBoolean(
+                 SystemUiDeviceConfigFlags.ASSIST_HANDLES_SHOW_WHEN_TAUGHT,
+                 DEFAULT_SHOW_WHEN_TAUGHT);
+     }
