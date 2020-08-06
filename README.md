@@ -33,7 +33,7 @@ How to build Havoc OS
             <project name="shank03/android_device_sony_lilac" path="device/sony/lilac" remote="git" revision="havoc-10" />
 
             <!-- Pinned blobs for lilac -->
-            <project name="shank03/android_vendor_sony_lilac" path="vendor/sony/lilac" remote="git" revision="master" />
+            <project name="shank03/android_vendor_sony_lilac" path="vendor/sony/lilac" remote="git" revision="main" />
 
             <project name="shank03/vendor_google-customization" path="vendor/google-customization" remote="git" revision="ten" />
         </manifest>
