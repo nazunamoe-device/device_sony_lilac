@@ -50,13 +50,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifeq ($(WITH_VOLTE),true)
 $(warning ************* WITH_VOLTE is Enabled ***************************)
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1  \
-    persist.dbg.wfc_avail_ovr=1
-endif
-
-#IMS
-PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.dropset_feature=0 \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.force_on_dc=true \
@@ -81,6 +74,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.voice_on_lte=1 \
     persist.vendor.radio.calls.on.ims=1 \
     persist.radio.calls.on.ims=1
+endif
 
 # Camera
 #include device/sony/lilac/camera/camera.mk
