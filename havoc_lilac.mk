@@ -42,11 +42,11 @@ BUILD_VERSION_TAGS := release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=lilac \
-    PRIVATE_BUILD_DESC="flame-user 10 QQ3A.200705.002 6506677 release-keys" \
-    BUILD_NUMBER=6506677
+    PRIVATE_BUILD_DESC="flame-user 10 QQ3A.200805.001 6578210 release-keys" \
+    BUILD_NUMBER=6578210
 
-# Pixel 4 July fingerprint
-BUILD_FINGERPRINT := google/flame/flame:10/QQ3A.200705.002/6506677:user/release-keys
+# Pixel 4 August fingerprint
+BUILD_FINGERPRINT := google/flame/flame:10/QQ3A.200805.001/6578210:user/release-keys
 #BUILD_FINGERPRINT := Sony/G8441/G8441:9/47.2.A.11.228/3311891731:user/release-keys
 
 PRODUCT_GMS_CLIENTID_BASE := android-sony-mobile
