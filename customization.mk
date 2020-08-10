@@ -50,6 +50,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifeq ($(WITH_VOLTE),true)
 $(warning ************* WITH_VOLTE is Enabled ***************************)
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
     persist.vendor.ims.dropset_feature=0 \
     persist.vendor.radio.add_power_save=1 \
     persist.vendor.radio.force_on_dc=true \
