@@ -133,9 +133,6 @@ PRODUCT_PACKAGES += \
     qtiImsInCallUi \
     ConfURIDialer
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
-
 # CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
@@ -156,36 +153,3 @@ PRODUCT_PACKAGES += \
 # Charger
 # Health (in addition to own board libhealth)
 #PRODUCT_PACKAGES += libhealthd.$(TARGET_DEVICE)
-
-# For sensitive reasons
-COLLATION_SOURCE = af.txt am.txt ar.txt \
-	as.txt az.txt be.txt bg.txt bn.txt \
-	bo.txt bs.txt bs_Cyrl.txt ca.txt chr.txt \
-	cs.txt cy.txt da.txt de.txt de_AT.txt \
-	dsb.txt dz.txt ee.txt el.txt en.txt \
-	en_US.txt en_US_POSIX.txt eo.txt es.txt et.txt \
-	fa.txt fa_AF.txt fi.txt fil.txt fo.txt \
-	fr.txt fr_CA.txt ga.txt gl.txt gu.txt \
-	ha.txt haw.txt he.txt hi.txt hr.txt \
-	hsb.txt hu.txt hy.txt id.txt ig.txt \
-	is.txt it.txt ja.txt ka.txt kk.txt \
-	kl.txt km.txt kn.txt ko.txt kok.txt \
-	ku.txt ky.txt lb.txt lkt.txt ln.txt \
-	lo.txt lt.txt lv.txt mk.txt ml.txt \
-	mn.txt mr.txt ms.txt mt.txt my.txt \
-	nb.txt ne.txt nl.txt nn.txt om.txt \
-	or.txt pa.txt pl.txt ps.txt pt.txt \
-	ro.txt ru.txt se.txt si.txt sk.txt \
-	sl.txt smn.txt sq.txt sr.txt sr_Latn.txt \
-	sv.txt sw.txt ta.txt te.txt th.txt \
-	tk.txt to.txt tr.txt ug.txt uk.txt \
-	ur.txt uz.txt vi.txt wae.txt wo.txt \
-	xh.txt yi.txt yo.txt zu.txt
-
-COLLATION_SYNTHETIC_ALIAS = ars.txt de_.txt de__PHONEBOOK.txt es_.txt \
-	es__TRADITIONAL.txt he_IL.txt id_ID.txt in.txt in_ID.txt \
-	iw.txt iw_IL.txt mo.txt nb_NO.txt no.txt \
-	no_NO.txt pa_Guru.txt pa_Guru_IN.txt pa_IN.txt ro_MD.txt \
-	sh.txt sh_BA.txt sh_CS.txt sh_YU.txt sr_BA.txt \
-	sr_Cyrl.txt sr_Cyrl_BA.txt sr_Cyrl_ME.txt sr_Cyrl_RS.txt sr_Latn_BA.txt \
-	sr_Latn_RS.txt sr_ME.txt sr_RS.txt yue.txt
