@@ -1,7 +1,7 @@
 # system prop for lilac
 
 #GMS
-ro.com.google.clientidbase.ms=android-sonymobile
+ro.com.google.clientidbase.ms=android-sony-mobile
 
 # Apex
 ro.apex.updatable=true
