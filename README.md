@@ -24,7 +24,7 @@ How to build Havoc OS
 
 * Sync the repo:
 
-        repo sync -c -j6 --no-clone-bundle -no-tags
+        repo sync -c -j6 --no-clone-bundle --no-tags
 
 * No need to extract vendor blobs, roomservice.xml will do it for us.
 
