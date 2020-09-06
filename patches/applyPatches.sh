@@ -24,4 +24,11 @@ cd hardware/qcom-caf/msm8998/display
 git apply mem.patch
 
 cd .. && cd .. && cd .. && cd ..
+cp device/sony/lilac/patches/fsck.patch system/sepolicy
+cd system/sepolicy
+
+# Fix fsck denial for SD bootloop
+git apply fsck.patch
+
+cd .. && cd ..
 echo "Done."

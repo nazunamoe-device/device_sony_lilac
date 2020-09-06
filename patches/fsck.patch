@@ -1,0 +1,12 @@
+diff --git a/private/domain.te b/private/domain.te
+index 209eeb0d..d4f1ac52 100644
+--- a/private/domain.te
++++ b/private/domain.te
+@@ -271,6 +271,7 @@ define(`dac_override_allowed', `{
+   vold
+   vold_prepare_subdirs
+   zygote
++  fsck
+ }')
+ neverallow ~dac_override_allowed self:global_capability_class_set dac_override;
+ # Since the kernel checks dac_read_search before dac_override, domains that
