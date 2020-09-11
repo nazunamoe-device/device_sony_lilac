@@ -65,5 +65,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	HotwordEnrollmentOKGoogleHEXAGON \
 	HotwordEnrollmentXGoogleHEXAGON \
-	SemcMusic \
-	WallpaperPickerGoogleRelease
+	SemcMusic
+
+ifeq ($(IS_PE),false)
+PRODUCT_PACKAGES += WallpaperPickerGoogleRelease
+endif

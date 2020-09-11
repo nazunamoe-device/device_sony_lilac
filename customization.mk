@@ -83,6 +83,7 @@ endif
 #include device/sony/lilac/camera/camera.mk
 
 # Apex
+ifeq ($(IS_PE),false)
 TARGET_FLATTEN_APEX := false
 PRODUCT_PACKAGES += \
     com.android.apex.cts.shim.v1_prebuilt \
@@ -93,6 +94,7 @@ PRODUCT_PACKAGES += \
     com.android.tzdata
 
 include vendor/google-customization/config.mk
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.mobicat=2 \

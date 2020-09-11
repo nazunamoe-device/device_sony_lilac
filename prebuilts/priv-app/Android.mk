@@ -36,6 +36,7 @@ LOCAL_MODULE_SUFFIX := .apk
 LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
+ifeq ($(IS_PE),false)
 include $(CLEAR_VARS)
 LOCAL_MODULE := WallpaperPickerGoogleRelease
 LOCAL_OVERRIDES_PACKAGES := WallpaperPicker WallpaperCropper
@@ -47,6 +48,7 @@ LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_PRODUCT_MODULE := true
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := GoogleCamera
