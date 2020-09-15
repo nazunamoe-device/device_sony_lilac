@@ -27,6 +27,10 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := true
 IS_PHONE := true
 WITH_GAPPS := true
 
+# Maintainer
+HAVOC_MAINTAINER := Shashank Verma (shank03)
+HAVOC_GROUP_URL := https://t.me/havoc_lilac
+
 ### FaceUnlockService
 TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := false
 
