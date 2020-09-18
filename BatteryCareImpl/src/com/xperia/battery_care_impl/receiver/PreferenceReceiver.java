@@ -17,9 +17,9 @@ package com.xperia.battery_care_impl.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import com.xperia.battery_care_impl.utils.Preference;
+import com.xperia.battery_care_impl.utils.Utils;
 
 public class PreferenceReceiver extends BroadcastReceiver {
 
@@ -39,19 +39,19 @@ public class PreferenceReceiver extends BroadcastReceiver {
                         long value = intent.getExtras().getLong("val", 108L);
                         Preference.setBatteryCareEnabledTime(value, context);
 
-                        Log.d(TAG, "onReceive: Preference received; key = " + key + ", val = " + value);
+                        Utils.log(TAG, "onReceive: Preference received; key = " + key + ", val = " + value, context);
                     }
                     if (key.equals(Preference.EXPECTED_FULL_CHARGE_TIME)) {
                         long value = intent.getExtras().getLong("val", 108L);
                         Preference.setExpectedFullChargeTime(value, context);
 
-                        Log.d(TAG, "onReceive: Preference received; key = " + key + ", val = " + value);
+                        Utils.log(TAG, "onReceive: Preference received; key = " + key + ", val = " + value, context);
                     }
                     if (key.equals(Preference.BATTERY_CARE_ENABLED)) {
                         boolean value = intent.getExtras().getBoolean("val", false);
                         Preference.setBatteryCareEnabled(value, context);
 
-                        Log.d(TAG, "onReceive: Preference received; key = " + key + ", val = " + value);
+                        Utils.log(TAG, "onReceive: Preference received; key = " + key + ", val = " + value, context);
                     }
                 }
             }

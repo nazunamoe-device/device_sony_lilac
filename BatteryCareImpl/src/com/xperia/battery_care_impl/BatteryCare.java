@@ -23,9 +23,8 @@ import android.os.BatteryManager;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
-import android.os.SystemProperties;
 import android.os.Process;
-import android.util.Log;
+import android.os.SystemProperties;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -109,11 +108,11 @@ public class BatteryCare extends Service {
             String action = intent.getAction();
             if (action != null) {
                 if (action.equals(Intent.ACTION_POWER_CONNECTED)) {
-                    Log.d(TAG, "onReceive: Power Connected");
+                    Utils.log(TAG, "onReceive: Power Connected", getApplicationContext());
                     startBatteryCare(intent);
                 }
                 if (action.equals(Intent.ACTION_POWER_DISCONNECTED)) {
-                    Log.d(TAG, "onReceive: Power Disconnected");
+                    Utils.log(TAG, "onReceive: Power Disconnected", getApplicationContext());
                     stopBatteryCare();
                 }
                 if (action.equals(Intent.ACTION_BATTERY_CHANGED)) {
@@ -132,9 +131,9 @@ public class BatteryCare extends Service {
                         }
                     }
                     if (_batPct == 100F) {
-                        Log.d(TAG, "onReceive: Battery Full. Stopping all");
+                        Utils.log(TAG, "onReceive: Battery Full. Stopping all", getApplicationContext());
                         if (_batteryCareStarted) {
-                            Log.d(TAG, "onReceive: Completed at " + Utils.getTimeString(System.currentTimeMillis(), getApplicationContext()));
+                            Utils.log(TAG, "onReceive: Completed at " + Utils.getTimeString(System.currentTimeMillis(), getApplicationContext()), getApplicationContext());
                         }
                         disableCharging();
                         stopBatteryCare();
@@ -148,7 +147,7 @@ public class BatteryCare extends Service {
 
     @Override
     public void onCreate() {
-        Log.d(TAG, "onCreate: Service Started");
+        Utils.log(TAG, "onCreate: Service Started", getApplicationContext());
 
         helper = new NotificationHelper(getApplicationContext());
         handlerThread = new HandlerThread("BatteryCareThread", Process.THREAD_PRIORITY_BACKGROUND);
@@ -178,7 +177,7 @@ public class BatteryCare extends Service {
 
     @Override
     public void onDestroy() {
-        Log.d(TAG, "onDestroy: Called");
+        Utils.log(TAG, "onDestroy: Called", getApplicationContext());
         unregisterReceiver(batteryStatsReceiver);
         stopBatteryCare();
 
@@ -197,17 +196,17 @@ public class BatteryCare extends Service {
     private void startBatteryCare(@Nullable Intent intent) {
         if (!_batteryCareStarted) {
             if (batteryCareShouldStart()) {
-                Log.d(TAG, "startBatteryCare: Battery Care should start = TRUE");
+                Utils.log(TAG, "startBatteryCare: Battery Care should start = TRUE", getApplicationContext());
 
                 _batteryCareStarted = true;
                 updateBatteryPercentage(intent);
 
                 helper.getManager().notify(1, helper.batteryCareNotification());
             } else {
-                Log.d(TAG, "startBatteryCare: Battery Care should start = FALSE");
+                Utils.log(TAG, "startBatteryCare: Battery Care should start = FALSE", getApplicationContext());
             }
         } else {
-            Log.d(TAG, "startBatteryCare: Already started");
+            Utils.log(TAG, "startBatteryCare: Already started", getApplicationContext());
         }
     }
 
@@ -216,14 +215,14 @@ public class BatteryCare extends Service {
      */
     private void stopBatteryCare() {
         if (_batteryCareStarted) {
-            Log.d(TAG, "stopBatteryCare: Stopping");
+            Utils.log(TAG, "stopBatteryCare: Stopping", getApplicationContext());
             _batteryCareStarted = false;
             _chargingStart = false;
             _batPct = -1F;
             mBatteryCareAllowed = true;
             enableCharging();
         } else {
-            Log.d(TAG, "stopBatteryCare: Already stopped");
+            Utils.log(TAG, "stopBatteryCare: Already stopped", getApplicationContext());
         }
     }
 
@@ -274,7 +273,7 @@ public class BatteryCare extends Service {
 
         milli = n.getTimeInMillis();
         if (milli < System.currentTimeMillis()) {
-            Log.d(TAG, "shouldChargingStart: milli was past");
+            Utils.log(TAG, "shouldChargingStart: milli was past", getApplicationContext());
             milli += 24 * 60 * 60 * 1000L;
         }
 
@@ -283,9 +282,9 @@ public class BatteryCare extends Service {
         long milliToCharge = (long) (minToCharge * 60 * 1000L);
 
         _chargingStart = milli - System.currentTimeMillis() <= milliToCharge;
-        Log.d(TAG, "shouldChargingStart: " + _chargingStart);
+        Utils.log(TAG, "shouldChargingStart: " + _chargingStart, getApplicationContext());
         if (_chargingStart) {
-            Log.d(TAG, "shouldChargingStart: charging started at " + Utils.getTimeString(System.currentTimeMillis(), getApplicationContext()));
+            Utils.log(TAG, "shouldChargingStart: charging started at " + Utils.getTimeString(System.currentTimeMillis(), getApplicationContext()), getApplicationContext());
             enableCharging();
         }
     }
@@ -318,7 +317,7 @@ public class BatteryCare extends Service {
             int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
             boolean charging = status == BatteryManager.BATTERY_STATUS_CHARGING || status == BatteryManager.BATTERY_STATUS_FULL;
 
-            Log.d(TAG, "isCharging: " + charging);
+            Utils.log(TAG, "isCharging: " + charging, getApplicationContext());
             return charging;
         } else {
             return false;
@@ -337,6 +336,12 @@ public class BatteryCare extends Service {
      * Method name explains itself
      */
     private void disableCharging() {
-        SystemProperties.set("persist.sys.yoshino.battery.care", "0");
+        // Disable charging after 30 seconds after call
+        new Handler(getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                SystemProperties.set("persist.sys.yoshino.battery.care", "0");
+            }
+        }, 30 * 1000L);
     }
 }

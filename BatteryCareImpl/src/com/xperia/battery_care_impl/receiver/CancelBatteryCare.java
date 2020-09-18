@@ -17,11 +17,11 @@ package com.xperia.battery_care_impl.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.xperia.battery_care_impl.BatteryCare;
 import com.xperia.battery_care_impl.utils.NotificationHelper;
+import com.xperia.battery_care_impl.utils.Utils;
 
 public class CancelBatteryCare extends BroadcastReceiver {
 
@@ -29,7 +29,7 @@ public class CancelBatteryCare extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.d(TAG, "onReceive: mBatteryCareAllowed set FALSE");
+        Utils.log(TAG, "onReceive: mBatteryCareAllowed set FALSE", context);
         BatteryCare.mBatteryCareAllowed = false;
 
         NotificationHelper helper = new NotificationHelper(context);

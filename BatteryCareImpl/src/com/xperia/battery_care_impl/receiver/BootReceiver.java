@@ -19,10 +19,10 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.UserHandle;
-import android.util.Log;
 
 import com.xperia.battery_care_impl.BatteryCare;
 import com.xperia.battery_care_impl.utils.Preference;
+import com.xperia.battery_care_impl.utils.Utils;
 
 public class BootReceiver extends BroadcastReceiver {
 
@@ -33,7 +33,7 @@ public class BootReceiver extends BroadcastReceiver {
         String action = intent.getAction();
         if (action != null) {
             if (action.equals(Intent.ACTION_BOOT_COMPLETED) || action.equals("android.intent.action.QUICKBOOT_POWERON")) {
-                Log.d(TAG, "onReceive: Boot Received");
+                Utils.log(TAG, "onReceive: Boot Received", context);
                 context.startServiceAsUser(new Intent(context, BatteryCare.class), UserHandle.CURRENT);
 
                 // Sync pref to main App no matter what

@@ -15,7 +15,8 @@
 package com.xperia.battery_care_impl;
 
 import android.app.Application;
-import android.util.Log;
+
+import com.xperia.battery_care_impl.utils.Utils;
 
 public class App extends Application {
 
@@ -23,7 +24,7 @@ public class App extends Application {
 
     @Override
     public void onCreate() {
-        Log.i(TAG, "onCreate: App Started");
+        Utils.log(TAG, "onCreate: App Started", getApplicationContext());
         super.onCreate();
     }
 }

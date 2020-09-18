@@ -17,9 +17,13 @@ package com.xperia.battery_care_impl.utils;
 import android.content.Context;
 import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
+import android.util.Log;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.text.ParseException;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class Utils {
 
@@ -39,5 +43,28 @@ public class Utils {
         }
 
         return usual;
+    }
+
+    private static final String LOG_FILE = "/data/data/com.xperia.battery_care/files/log.log";
+
+    public static void log(String tag, String msg, Context context) {
+        Log.d(tag, msg);
+        File file = new File(LOG_FILE);
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(file, true);
+            String log = getTimeString(System.currentTimeMillis(), context) + " [Impl] " + tag + ": " + msg + "\r\n";
+            fos.write(log.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fos != null) {
+                    fos.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
