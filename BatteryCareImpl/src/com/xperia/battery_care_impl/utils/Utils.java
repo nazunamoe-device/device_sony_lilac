@@ -14,13 +14,13 @@
 
 package com.xperia.battery_care_impl.utils;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
 import android.util.Log;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Locale;
@@ -45,26 +45,12 @@ public class Utils {
         return usual;
     }
 
-    private static final String LOG_FILE = "/data/data/com.xperia.battery_care/files/log.log";
-
     public static void log(String tag, String msg, Context context) {
         Log.d(tag, msg);
-        File file = new File(LOG_FILE);
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(file, true);
-            String log = getTimeString(System.currentTimeMillis(), context) + " [Impl] " + tag + ": " + msg + "\r\n";
-            fos.write(log.getBytes());
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (fos != null) {
-                    fos.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        String log = getTimeString(System.currentTimeMillis(), context) + " [Impl] " + tag + ": " + msg + "\r\n";
+        context.sendBroadcast(new Intent().setAction("com.xperia.battery_care.LOG")
+                .addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
+                .putExtra("log", log)
+                .setComponent(new ComponentName("com.xperia.battery_care", "com.xperia.battery_care.receiver.LogReceiver")));
     }
 }
