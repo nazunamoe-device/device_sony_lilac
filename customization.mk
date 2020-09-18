@@ -157,4 +157,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += libhealthd.$(TARGET_DEVICE)
 
 # BatteryCare
-include device/sony/lilac/BatteryCareImpl/battery-care.mk
+PRODUCT_PACKAGES += \
+    BatteryCare \
+    BatteryCareImpl
