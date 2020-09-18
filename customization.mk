@@ -155,3 +155,6 @@ PRODUCT_PACKAGES += \
 # Charger
 # Health (in addition to own board libhealth)
 #PRODUCT_PACKAGES += libhealthd.$(TARGET_DEVICE)
+
+# BatteryCare
+include device/sony/lilac/BatteryCareImpl/battery-care.mk
