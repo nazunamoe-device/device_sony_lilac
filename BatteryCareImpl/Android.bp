@@ -24,12 +24,21 @@ android_app {
         enabled: false,
     },
     required: [
-        "privapp-permissions_com.xperia.battery_care_impl"
+        "privapp-permissions_com.xperia.battery_care_impl",
+        "privapp-permissions_com.xperia.battery_care"
     ]
 }
+
 prebuilt_etc {
     name: "privapp-permissions_com.xperia.battery_care_impl",
     sub_dir: "permissions",
     src: "privapp-permissions_com.xperia.battery_care_impl.xml",
+    filename_from_src: true,
+}
+
+prebuilt_etc {
+    name: "privapp-permissions_com.xperia.battery_care",
+    sub_dir: "permissions",
+    src: "privapp-permissions_com.xperia.battery_care.xml",
     filename_from_src: true,
 }
