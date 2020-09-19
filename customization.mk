@@ -157,6 +157,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += libhealthd.$(TARGET_DEVICE)
 
 # BatteryCare
-PRODUCT_PACKAGES += \
-    BatteryCare \
-    BatteryCareImpl
+#PRODUCT_PACKAGES += \
+#    BatteryCare \
+#    BatteryCareImpl
