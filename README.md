@@ -20,7 +20,7 @@ How to build Havoc OS
 
 * Create a local manifest:
 
-        git clone https://github.com/shank03/local_manifests.git -b havoc-10 .repo/local_manifests
+        git clone https://github.com/shank03/local_manifests.git -b ten .repo/local_manifests
 
 * Sync the repo:
 
