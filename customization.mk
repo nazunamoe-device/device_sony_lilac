@@ -33,10 +33,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(CUST_PATH)/vendor/etc/permissions/android.hardware.camera.ar.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.ar.xml
 
-# APNs Conf
-#PRODUCT_COPY_FILES += \
-	$(CUST_PATH)/vendor/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
-
 # Limit dex2oat threads to improve thermals
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-threads=2 \
