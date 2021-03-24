@@ -45,20 +45,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 #include device/sony/lilac/camera/camera.mk
 
-# Apex
-ifeq ($(IS_PE),false)
-TARGET_FLATTEN_APEX := false
-PRODUCT_PACKAGES += \
-    com.android.apex.cts.shim.v1_prebuilt \
-    com.android.conscrypt \
-    com.android.media \
-    com.android.media.swcodec\
-    com.android.resolv \
-    com.android.tzdata
-
-include vendor/google-customization/config.mk
-endif
-
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.mobicat=2 \
     persist.camera.stats.debugexif=3080192 \
