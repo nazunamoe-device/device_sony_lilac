@@ -63,8 +63,6 @@ PRODUCT_COPY_FILES += \
 	$(PRE_PATH)/framework/com.sonyericsson.music.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/com.sonyericsson.music.jar
 
 PRODUCT_PACKAGES += \
-	HotwordEnrollmentOKGoogleHEXAGON \
-	HotwordEnrollmentXGoogleHEXAGON \
 	SemcMusic
 
 ifeq ($(IS_PE),false)
