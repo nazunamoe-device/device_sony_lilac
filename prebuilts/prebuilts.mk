@@ -64,7 +64,3 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
 	SemcMusic
-
-ifeq ($(IS_PE),false)
-PRODUCT_PACKAGES += WallpaperPickerGoogleRelease
-endif
