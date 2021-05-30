@@ -25,6 +25,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(DEVICE_PATH)/overlay/packages/apps/CarrierConfig
 
+### POWER
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/config/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 include $(DEVICE_PATH)/device/*.mk
 
 # Customization
