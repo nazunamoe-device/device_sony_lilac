@@ -27,7 +27,7 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 
 ### POWER
 PRODUCT_COPY_FILES += \
-    $(PLATFORM_PATH)/config/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    $(DEVICE_PATH)/config/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 include $(DEVICE_PATH)/device/*.mk
 
