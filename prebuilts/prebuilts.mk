@@ -61,6 +61,3 @@ PRODUCT_COPY_FILES += \
 	$(PRE_PATH)/framework/com.sonyericsson.system.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/com.sonyericsson.system.jar \
 	$(PRE_PATH)/framework/com.sonyericsson.privateapis_impl.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/com.sonyericsson.privateapis_impl.jar \
 	$(PRE_PATH)/framework/com.sonyericsson.music.jar:$(TARGET_COPY_OUT_SYSTEM)/framework/com.sonyericsson.music.jar
-
-PRODUCT_PACKAGES += \
-	SemcMusic
