@@ -44,11 +44,11 @@ BUILD_VERSION_TAGS := release-keys
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=lilac \
-    PRIVATE_BUILD_DESC="redfin-user 11 RQ3A.210605.005 7349499 release-keys" \
-    BUILD_NUMBER=7349499
+    PRIVATE_BUILD_DESC="redfin-user 11 RQ3A.210705.001 7380771 release-keys" \
+    BUILD_NUMBER=7380771
 
-# Pixel 5 June fingerprint
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210605.005/7349499:user/release-keys
+# Pixel 5 July fingerprint
+BUILD_FINGERPRINT := google/redfin/redfin:11/RQ3A.210705.001/7380771:user/release-keys
 #BUILD_FINGERPRINT := Sony/G8441/G8441:9/47.2.A.11.228/3311891731:user/release-keys
 
 PRODUCT_GMS_CLIENTID_BASE := android-sony-mobile
