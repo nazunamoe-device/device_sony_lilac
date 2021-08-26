@@ -31,5 +31,9 @@ PRODUCT_COPY_FILES += \
 
 include $(DEVICE_PATH)/device/*.mk
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Customization
 $(call inherit-product, device/sony/lilac/customization.mk)
