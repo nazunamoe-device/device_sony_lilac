@@ -8,34 +8,25 @@ $(call inherit-product, device/sony/lilac/device.mk)
 # Product API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 
-### BOOTANIMATION
-# vendor/havoc/config/common_full_phone.mk
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
-TARGET_BOOT_ANIMATION_RES := 720
-# vendor/havoc/config/common.mk
-TARGET_BOOTANIMATION_HALF_RES := true
+# Inherit some common CherishOS stuff
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
 
-### Havoc Stuffs
-TARGET_GAPPS_ARCH := arm64
-TARGET_INCLUDE_STOCK_ARCORE := true
-TARGET_SUPPORTS_PIXEL_WALLPAPER := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
-IS_PHONE := true
-WITH_GAPPS := true
+ifneq ($(WITH_GMS),true)
+USE_LAWNCHAIR := true
+endif
 
-# Maintainer
-HAVOC_MAINTAINER := Shashank Verma (shank03)
-HAVOC_GROUP_URL := https://t.me/havoc_lilac
-
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+PRODUCT_GENERIC_PROPERTIES += \
+    ro.cherish.maintainer=nazunamoe
+    
 ### FaceUnlockService
-TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := false
+TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK := false]\
 
-### HAVOC
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 720
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_NAME := havoc_lilac
+PRODUCT_NAME := cherish_lilac
 PRODUCT_DEVICE := lilac
 PRODUCT_BRAND := Sony
 PRODUCT_MODEL := G8441

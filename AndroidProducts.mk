@@ -15,13 +15,13 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/havoc_lilac.mk \
+    $(LOCAL_DIR)/cherish_lilac.mk \
     $(LOCAL_DIR)/aosp_lilac.mk
 
 COMMON_LUNCH_CHOICES := \
-    havoc_lilac-user \
-    havoc_lilac-userdebug \
-    havoc_lilac-eng \
+    cherish_lilac-user \
+    cherish_lilac-userdebug \
+    cherish_lilac-eng \
     aosp_lilac-user \
     aosp_lilac-userdebug \
     aosp_lilac-eng
