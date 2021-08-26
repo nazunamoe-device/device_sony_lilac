@@ -31,9 +31,5 @@ PRODUCT_COPY_FILES += \
 
 include $(DEVICE_PATH)/device/*.mk
 
-# GCam Go
-PRODUCT_PACKAGES += \
-    GCam
-
 # Customization
 $(call inherit-product, device/sony/lilac/customization.mk)
